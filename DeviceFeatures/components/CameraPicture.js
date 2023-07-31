@@ -18,6 +18,10 @@ function CameraPicture({navigation}) {
         navigation.navigate('SqLiteOperations');
     }
 
+    function pushNotificationHandler() {
+        navigation.navigate('PushNotifications');
+    }
+
     return (
         <>
             <View style={styles.container}>
@@ -25,8 +29,11 @@ function CameraPicture({navigation}) {
                 {!cameraImage && <Text style={styles.content}>CameraPicture</Text>}
             </View>
             <Button title="Take Picture" onPress={takePictureHandler}/>
-            <View style={{flex: 1, marginTop: 10}}>
+            <View style={{marginTop: 10}}>
                 <Button title="SQLite Operations" onPress={goToSqliteHandler}/>
+            </View>
+            <View style={{marginTop: 10}}>
+                <Button title="Push Notifcations" onPress={pushNotificationHandler}/>
             </View>
         </>
     )
